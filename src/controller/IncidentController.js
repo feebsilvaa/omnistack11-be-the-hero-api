@@ -57,7 +57,7 @@ module.exports = {
 
     // retorna o caso salvo
     const [createdIncident] = await conn(TABLE_NAME).select('*').where('id', id);
-    return res.json(createdIncident);
+    return res.status(201).json(createdIncident);
   },
 
   async delete(req, res) {
