@@ -1,5 +1,6 @@
 const conn = require('../database/connection');
-const crypto = require('crypto');
+
+const utils = require('../utils/ControllerUtils');
 
 const TABLE_NAME = 'ongs';
 
@@ -18,8 +19,8 @@ module.exports = {
       return res.status(412).json({ erro: "Todos os campos são obrigatórios." });
     
 
-    const id = crypto.randomBytes(4).toString('HEX');
-
+    const id = utils.generateUniqueId();
+    
     await conn(TABLE_NAME).insert({
       id, name, email, whatsapp, city, uf
     });

@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 
 module.exports = {
 
@@ -18,6 +20,10 @@ module.exports = {
 
   getPaginationPresenter(info, content) {
     return { page: { info, content } };
+  },
+
+  generateUniqueId() {
+    return crypto.randomBytes(4).toString('HEX');
   }
 
 }

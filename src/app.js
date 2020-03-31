@@ -7,6 +7,9 @@ const routes = require('./routes');
 // importa cors
 const cors = require('cors');
 
+// requests validation with celebrate
+const { errors } = require('celebrate');
+
 // inicia o express
 const app = express();
 
@@ -29,8 +32,6 @@ app.use(routes);
  * npx knex init - cria um arquivo para configuracoes com o banco de dados
  */
 
+ app.use(errors());
 
-// escuta a porta 3333 para receber as requisições
-app.listen(3333, () => {
-  console.debug("Server is running and listening on 3333 port.")
-});
+module.exports = app;
