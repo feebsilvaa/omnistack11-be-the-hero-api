@@ -12,7 +12,7 @@ module.exports = {
       isFirstPage: ( page <= 0 ),
       isLastPage: ( !hasNextPage ),
     };
-    console.debug({ pagination });
+    // console.debug({ pagination });
     return pagination;
   },
 
