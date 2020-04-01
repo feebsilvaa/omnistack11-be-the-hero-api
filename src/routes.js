@@ -37,6 +37,7 @@ routes.get('/profile', celebrate({
     authorization: Joi.string().required(),
   }).unknown(),
   [Segments.QUERY]: Joi.object().keys({
+    listAll: Joi.string(),
     page: Joi.number(),
     size: Joi.number(),
   }),
