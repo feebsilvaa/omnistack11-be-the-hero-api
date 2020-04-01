@@ -34,4 +34,13 @@ app.use(routes);
 
  app.use(errors());
 
+
+app.get('/', (req, res) => {
+  return res.json({
+    health: 'OK',
+    'application-name': 'Be The Hero API',
+    github: 'https://github.com/feebsilvaa/omnistack11-be-the-hero-api',
+  })
+})
+
 module.exports = app;
